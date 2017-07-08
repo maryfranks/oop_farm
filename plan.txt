@@ -1,16 +1,16 @@
 Things I need:
 
-1. Farm!
-  where the menu and outputs live
-2. Field
-  need:
-      size (hectare)
-      array of all the fields
-3. Cornfield
-  need:
-      amount of food per hectare
-4. Wheat field
-      amount of food per hectare
+xx  1. Farm!
+      where the menu and outputs live
+xx  2. Field
+      need:
+          size (hectare)
+          array of all the fields
+xx  3. Cornfield
+      need:
+          amount of food per hectare
+xx  4. Wheat field
+          amount of food per hectare
 
 
 things to do:
@@ -18,5 +18,5 @@ things to do:
 1. Harvest: iterate over the fields and total the harvest
 2. Relax
 3. Get field status
-4. add new fields
+xx  4. add new fields
 5. exit
