@@ -1,5 +1,20 @@
 class Farm
 
+  def initialize(name)
+    puts "This is the #{name} Farm"
+    @name = name
+    self.main_menu
+  end
+
+  def print_main_menu
+    puts "pick one of the following options"
+    puts "[1] Harvest"
+    puts "[2] Relax"
+    puts "[3] Get Field Status"
+    puts "[4] Add New Field"
+    puts "[5] Exit"
+  end
+
 end
 
 class Field
@@ -22,6 +37,14 @@ class Field
 
   def self.all_fields
     @@fields
+  end
+
+  def relax
+
+  end
+
+  def field_status
+
   end
 
 end
