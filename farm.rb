@@ -36,7 +36,7 @@ class Farm
   end
 
   def harvest_all_fields
-
+    Field.harvest 
   end
 
   def relax
