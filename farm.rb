@@ -1,3 +1,5 @@
+require 'pry'
+
 class Farm
 
   def initialize(name)
@@ -42,6 +44,7 @@ class Farm
   end
 
   def get_field_status
+    # binding.pry
     Field.all_fields.each do |field|
     puts "Your #{field.class} field is #{field.size} hectares."
     end
@@ -49,7 +52,11 @@ class Farm
   end
 
   def add_new_field
-
+    puts "What type of field would you like to create?"
+    field_type = gets.chomp
+    puts "How many hectares is your new field?"
+    field_size = gets.chomp
+    Field.create(field_type.capitalize, field_size.to_i)
   end
 
 end
@@ -59,17 +66,17 @@ class Field
   attr_reader :size
 
   @@fields = []
-  @@total_harvested
+  @@total_harvested = 0
 
   def initialize(size)
     @size = size
   end
 
   def self.create(field_type, size) # ==== this is my starting point =====
-    if field_type == Corn
+    if field_type == 'Corn'
       @@fields << Corn.new(size)
       return @@fields.last
-    elsif field_type == Wheat
+    elsif field_type == 'Wheat'
       @@fields << Wheat.new(size)
       return @@fields.last
     end
