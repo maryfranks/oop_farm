@@ -1,4 +1,4 @@
-require 'pry'
+#  ================== Farm Class ==========================
 
 class Farm
 
@@ -36,7 +36,7 @@ class Farm
   end
 
   def harvest_all_fields
-    Field.harvest 
+    Field.harvest
   end
 
   def relax
@@ -60,6 +60,8 @@ class Farm
   end
 
 end
+
+#  ================== Field Class ==========================
 
 class Field
 
@@ -101,6 +103,8 @@ class Field
   end
 
 end
+
+#  ================== Corn and Wheat Classes ==========================
 
 class Corn < Field
 
