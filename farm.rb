@@ -42,7 +42,8 @@ class Farm
   end
 
   def get_field_status
-
+    total = Field.harvest
+    puts "Your farm has harvested #{Field.field_status} food so far"
   end
 
   def add_new_field
@@ -56,6 +57,7 @@ class Field
   attr_reader :size
 
   @@fields = []
+  @@total_harvested
 
   def initialize(size)
     @size = size
@@ -81,11 +83,12 @@ class Field
       total_harvested = field.output * field.size
       harvest += total_harvested
     end
+    @@total_harvested = harvest
     return harvest
   end
 
-  def field_status
-
+  def self.field_status
+    @@total_harvested
   end
 
 end
