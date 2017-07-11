@@ -42,7 +42,9 @@ class Farm
   end
 
   def get_field_status
-    total = Field.harvest
+    Field.all_fields.each do |field|
+    puts "Your #{field.class} field is #{field.size} hectares."
+    end
     puts "Your farm has harvested #{Field.field_status} food so far"
   end
 
