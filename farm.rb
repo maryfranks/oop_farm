@@ -7,7 +7,11 @@ class Farm
   end
 
   def main_menu
-
+    while true
+      print_main_menu
+      menu_item_selected = gets.chomp
+      selected_function(menu_item_selected.to_i)
+    end
   end
 
   def print_main_menu
@@ -19,13 +23,37 @@ class Farm
     puts "[5] Exit"
   end
 
+  def selected_function(menu_item_selected)
+    case menu_item_selected
+    when 1 then harvest_all_fields
+    when 2 then relax
+    when 3 then get_field_status
+    when 4 then add_new_field
+    when 5 then exit
+    end
+  end
+
+  def harvest_all_fields
+
+  end
+
   def relax
     puts "It's such a lovely day on your farm!"
+  end
+
+  def get_field_status
+
+  end
+
+  def add_new_field
+
   end
 
 end
 
 class Field
+
+  attr_reader :size
 
   @@fields = []
 
@@ -48,7 +76,12 @@ class Field
   end
 
   def self.harvest
-
+    harvest = 0
+    @@fields.each do |field|
+      total_harvested = field.output * field.size
+      harvest += total_harvested
+    end
+    return harvest
   end
 
   def field_status
@@ -59,6 +92,8 @@ end
 
 class Corn < Field
 
+  attr_reader :output
+
   def initialize(size)
     super(size)
     @output = 20
@@ -68,9 +103,11 @@ end
 
 class Wheat < Field
 
+  attr_reader :output
+
   def initialize(size)
     super(size)
-    @@output = 40
+    @output = 40
   end
 
 end
